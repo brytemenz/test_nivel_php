@@ -1,0 +1,23 @@
+english:
+First of all, I will investigate the error the person faced while downloading the file, it could be network or internet issue or
+improper download, if the error was not caused by the above the following is what I will take as a developer
+1. I will contact the developer in charge
+2. suggest the following
+  a. check the header settings
+  b. Check the CTE- Content Transfer Encoding
+  c. Check the content Length
+  d. check to see if the file extension is set right
+
+
+Versión en español:
+En primer lugar, voy a investigar el error que la persona enfrentó al descargar el archivo, podría ser la red o problema de Internet o
+descarga incorrecta, si el error no fue causado por lo anterior lo siguiente es lo que voy a tomar como desarrollador
+1. Me pondré en contacto con el desarrollador responsable
+2. sugerir lo siguiente
+  a. comprobar la configuración de la cabecera
+  b. Comprobar la CTE- Content Transfer Encoding
+  c. Compruebe la longitud del contenido
+  d. compruebe si la extensión del archivo está bien configurada
+
+
+Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
