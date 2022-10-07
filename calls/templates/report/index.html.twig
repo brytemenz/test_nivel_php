@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+  
+{% block title %}report index{% endblock %}
+  
+{% block body %}
+    <div class="container">
+        <h2 class="text-center mt-5 mb-3">Report Manager</h2>
+        <div class="card">
+            <div class="card-header">
+                <a class="btn btn-outline-primary" href="{{ path('app_report_new') }}"> 
+                    Create New report 
+                </a>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Id</th>
+                        <th>First_name</th>
+                        <th>Last_name</th>
+                        <th>Contact</th>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
+                        <th>actions</th>
+                    </tr>
+                    {% for report in reports %}
+                    <tr>
+                        <td>{{ report.id }}</td>
+                        <td>{{ report.firstName }}</td>
+                        <td>{{ report.lastName }}</td>
+                        <td>{{ report.contact }}</td>
+                        <td>{{ report.subject }}</td>
+                        <td>{{ report.description }}</td>
+                        <td>{{ report.createdAt ? report.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ report.updatedAt ? report.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <form method="post" action="{{ path('app_report_delete', {'id': report.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                <a
+                                    class="btn btn-outline-info"
+                                    href="{{ path('app_report_show', {'id': report.id}) }}">
+                                    Show
+                                </a>
+                                <a
+                                    class="btn btn-outline-success"
+                                    href="{{ path('app_report_edit', {'id': report.id}) }}">
+                                    Edit
+                                </a>
+  
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ report.id) }}">
+                                <button class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+       
